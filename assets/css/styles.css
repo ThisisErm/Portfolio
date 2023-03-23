@@ -71,6 +71,11 @@ img {
   display: block;
 }
 
+/*===== Box icons inherit ===== */
+.bx {
+  font-family: inherit;
+}
+
 /*===== CLASS CSS ===== */
 .section-title {
   position: relative;
@@ -324,20 +329,58 @@ img {
   row-gap: 2rem;
 }
 
+.work__urls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--first-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: visibility 0s, opacity 0.5s ease-out;
+}
+
+.work__urls a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+}
+
+
 .work__img {
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   height: 212.5px;
   border-radius: .5rem;
   overflow: hidden;
+  position: relative; /* Added position relative to the parent element */
+  background-size: cover;
 }
 
 .work__img img {
   transition: 1s;
 }
 
-.work__img img:hover {
+#passport {
+padding-top: 0px;
+}
+
+.work__img:hover img {
   transform: scale(1.1);
 }
+
+.work__img:hover .work__urls { /* Added the hover selector for the work__urls div */
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
 
 /* ===== CONTACT =====*/
 .contact__input {
